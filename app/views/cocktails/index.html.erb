@@ -1,0 +1,77 @@
+<div class="wrapper-index">
+  <h1 class="page-title text-center">
+    <span class="title-normal">Our </span><span class="title-colorize">favorite </span><span class="title-normal">cocktails</span>
+  </h1>
+
+  <div class="container-cards">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-6 col-sm-4 card-container">
+          <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.5)), url(<%= Picture.find(cocktail.id).url %>);">
+            <div class="card-name"> <%= cocktail.name %></div>
+            <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
+            <div class="card-ingredients">
+              <ul>
+                <% cocktail.doses.each do |dose| %>
+                  <li>
+                    <%= dose.description %> <%= dose.ingredient.name %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+
+const allCards = (document.getElementsByClassName("card"));
+const allIngredientLists = document.getElementsByClassName("card-ingredients")
+allCardsArray = Array.prototype.slice.call(allCards)
+
+Array.prototype.forEach.call(allIngredientLists, a => {
+  a.style.display = "none";
+});
+
+Array.prototype.forEach.call(allCards, a => {
+  a.addEventListener("mouseover", function() {
+    let ingredientList = a.getElementsByClassName("card-ingredients")[0]
+    ingredientList.style.display = "";
+  });
+
+  a.addEventListener("mouseleave", function() {
+    let ingredientList = a.getElementsByClassName("card-ingredients")[0]
+    ingredientList.style.display = "none";
+  });
+});
+
+// Cards appear scroll
+// Scroll update active elements
+
+thirdLineCards = allCardsArray.slice(6,9)
+thirdLineY = thirdLineCards[0].getBoundingClientRect().top - 100
+
+fourthLineCards = allCardsArray.slice(9, 12)
+fourthLineY = fourthLineCards[0].getBoundingClientRect().top - 100
+
+document.addEventListener("scroll", function() {
+  let scrollTopNow = window.pageYOffset + 980;
+  console.log(scrollTopNow)
+  if (scrollTopNow >= thirdLineY && scrollTopNow < fourthLineY) {
+    Array.prototype.forEach.call(thirdLineCards, a => {
+      a.classList.add("come-in")
+    });
+  } else if (scrollTopNow >= fourthLineY) {
+    Array.prototype.forEach.call(fourthLineCards, a => {
+      a.classList.add("come-in")
+    });
+  }
+});
+
+</script>
+
+
+

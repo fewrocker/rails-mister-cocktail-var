@@ -1,0 +1,106 @@
+.wrapper-index {
+  height: auto;
+  background-color: rgba(0,40,100,1);
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://media.gqindia.com/wp-content/uploads/2014/11/pco.jpg');
+  background-size: cover !important;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.page-title {
+  padding-top: 30px;
+  margin: 0 0 0 30px;
+}
+
+.title-normal {
+  color: white;
+  font-size: 60px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title-colorize {
+  padding: 0 10px;
+  color: rgba(230,0,0,1);
+  font-size: 80px;
+  font-family: 'Lobster', cursive;
+}
+
+.container-cards {
+  margin: 40px 0 0 0;
+  padding: 0 100px 200px 100px;
+}
+
+.card {
+  height: 425px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  margin: 20px 10px;
+  padding: 4px;
+
+  &:hover {
+    padding: 0;
+    border: 4px solid white;
+    box-shadow: 3px 3px rgba(240,240,240,0.5);
+  }
+
+  &:hover > .card-name {
+    color: rgba(255,255,255,1);
+  }
+}
+
+.card-name {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 45px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.card-ingredients {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 25px;
+      color: rgba(255,255,255,1);
+    }
+  }
+}
+
+// Slide ins
+.come-in {
+  transform: translateY(200px);
+  animation: come-in 1.5s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 1.2s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}

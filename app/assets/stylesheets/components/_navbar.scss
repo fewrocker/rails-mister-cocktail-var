@@ -1,0 +1,28 @@
+/* Main navbar */
+.navbar-wagon {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: rgba(0,20,80,1);
+  transition: all 0.3s ease;
+  height: 200px;
+  padding: 50px 0px 0 40px;
+  border-bottom: 2px solid rgba(230,0,0,1);
+
+  h1 {
+    margin: 0px;
+  }
+}
+
+.brandicon {
+  font-size: 80px;
+  color: lightblue;
+}
+
+.logo-ez {
+  font-size: 60px;
+  color: lightblue;
+}
+
+.logo-drinks {
+  font-size: 90px;
+  color: rgba(230,0,0,1);
+}

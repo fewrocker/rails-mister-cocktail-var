@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMisterCocktailVar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
+    <!--
+    font-family: 'Pinyon Script', cursive;
+    font-family: 'Roboto', sans-serif; -->
+
+    <title>RailsMisterCocktailNew</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +17,19 @@
   </head>
 
   <body>
+
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <div>
+        <h1>
+        <%= link_to cocktails_path do %>
+          <%= content_tag :i, "", :class => "brandicon fas fa-glass-martini" %>
+        <% end %>
+        <span><span class="logo-ez">Ez</span><span class="logo-drinks">drinks</span></span>
+        </h1>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
